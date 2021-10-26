@@ -1,6 +1,8 @@
+import 'package:emulator/widget/degisenwidget.dart';
+import 'package:emulator/widget/imageview.dart';
 import 'package:flutter/material.dart';
 
-import 'formView.dart';
+import 'formview.dart';
 
 class ScaffoldView extends StatelessWidget {
   const ScaffoldView({Key? key}) : super(key: key);
@@ -55,18 +57,56 @@ class ScaffoldView extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: <Widget>[
-            gridViewContainer("He'd have you fun!", Colors.orangeAccent),
-            gridViewContainer("Oldu mu şimdi?!", Colors.blueAccent),
-            gridViewContainer("Napcaz şimdi!", Colors.greenAccent),
-            gridViewContainer("Dere boyu kavaklar!", Colors.pinkAccent),
-            gridViewContainer("Açtı yeşil yapraklar!", Colors.purpleAccent),
-            gridViewContainer("Ben o yare doymadım!", Colors.cyanAccent),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FormView()));
+              },
+              child: gridViewContainer(
+                """Tek Tıklama\nform sayfasına git""",
+                Colors.orangeAccent,
+                NetworkImage("https://picsum.photos/150/150"),
+              ),
+            ),
+            GestureDetector(
+              onDoubleTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DegisenWidget()));
+              },
+              child: gridViewContainer(
+                """Çift Tıklama\nHelloWorld sayfasına git""",
+                Colors.blueAccent,
+                NetworkImage("https://picsum.photos/150/150"),
+              ),
+            ),
+            GestureDetector(
+              onLongPress: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ImageView()));
+              },
+              child: gridViewContainer(
+                """Uzun Basma\nImageView sayfasına git""",
+                Colors.greenAccent,
+                NetworkImage("https://picsum.photos/150/150"),
+              ),
+            ),
+            gridViewContainer(
+              "Deneme",
+              Colors.pinkAccent,
+              NetworkImage("https://picsum.photos/150/150"),
+            ),
+            gridViewContainer(
+              "Denemee",
+              Colors.purpleAccent,
+              NetworkImage("https://picsum.photos/150/150"),
+            ),
+            gridViewContainer(
+              "Denemeee",
+              Colors.cyanAccent,
+              NetworkImage("https://picsum.photos/150/150"),
+            ),
           ],
         ),
-        // child: Text(
-        //   'Merhaba Scaffold',
-        //   textDirection: TextDirection.ltr,
-        // ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
@@ -110,14 +150,14 @@ class ScaffoldView extends StatelessWidget {
       drawer: Drawer(
         child: ListTile(
           leading: const Icon(
-            Icons.change_history,
+            Icons.adb_sharp,
           ),
           title: const Text(
             "Change History",
           ),
           onTap: () {
             Navigator.pop(context);
-            debugPrint("yanMenu öğesine tıkladınız");
+            debugPrint("yan menu öğesine tıkladınız");
           },
         ),
       ),
@@ -125,28 +165,40 @@ class ScaffoldView extends StatelessWidget {
   }
 }
 
-Container gridViewContainer(String yazi, Color renk) {
+Container gridViewContainer(String yazi, Color renk, NetworkImage resim) {
   return Container(
     decoration: BoxDecoration(
+      image: DecorationImage(
+        image: resim,
+        fit: BoxFit.cover,
+      ),
       borderRadius: BorderRadius.circular(25),
       boxShadow: [
         BoxShadow(
           color: renk,
-
           spreadRadius: 1,
           blurRadius: 1,
           offset: const Offset(0, 3), // changes position of shadow
         ),
       ],
     ),
-    alignment: Alignment.center,
+    alignment: Alignment.bottomCenter,
     padding: const EdgeInsets.all(8),
-    child: Text(
-      yazi,
-      textAlign: TextAlign.center,
-      style: const TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.bold,
+    child: Transform(
+      alignment: Alignment.bottomCenter,
+      transform: Matrix4.skewY(0.0)..rotateZ(0.0),
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.all(8),
+        color: Color(0xaaFFFFFF),
+        child: Text(
+          yazi,
+          textAlign: TextAlign.center,
+          style: const TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     ),
   );
