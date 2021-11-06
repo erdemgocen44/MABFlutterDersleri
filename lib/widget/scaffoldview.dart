@@ -1,6 +1,7 @@
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 import 'formview.dart';
 
@@ -65,7 +66,7 @@ class ScaffoldView extends StatelessWidget {
               child: gridViewContainer(
                 """Tek Tıklama\nform sayfasına git""",
                 Colors.orangeAccent,
-                NetworkImage("https://picsum.photos/150/150"),
+                NetworkImage(""),
               ),
             ),
             GestureDetector(
@@ -76,7 +77,7 @@ class ScaffoldView extends StatelessWidget {
               child: gridViewContainer(
                 """Çift Tıklama\nHelloWorld sayfasına git""",
                 Colors.blueAccent,
-                NetworkImage("https://picsum.photos/150/150"),
+                NetworkImage(""),
               ),
             ),
             GestureDetector(
@@ -87,23 +88,58 @@ class ScaffoldView extends StatelessWidget {
               child: gridViewContainer(
                 """Uzun Basma\nImageView sayfasına git""",
                 Colors.greenAccent,
-                NetworkImage("https://picsum.photos/150/150"),
+                NetworkImage(""),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Fluttertoast.showToast(
+                  msg: "Bu öğeye bir defa tıkladınız!",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.grey,
+                  textColor: Colors.white,
+                );
+              },
+              onDoubleTap: () {
+                Fluttertoast.showToast(
+                  msg: "Bu öğeye iki defa tıkladınız!",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.white,
+                  textColor: Colors.redAccent,
+                );
+              },
+              onLongPress: () {
+                Fluttertoast.showToast(
+                  msg: "Bu öğeye uzun bastınız!",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  backgroundColor: Colors.purple,
+                  textColor: Colors.amber,
+                );
+              },
+              child: gridViewContainer(
+                """Toast Mesajı Kullanma""",
+                Colors.greenAccent,
+                NetworkImage(
+                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fandroid-what-is-toast-and-how-to-use-it-with-examples%2F&psig=AOvVaw0pwqYfs_bWxKH80nm2yT-1&ust=1636320900899000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCPiBsMLYhPQCFQAAAAAdAAAAABAD"),
               ),
             ),
             gridViewContainer(
               "Deneme",
               Colors.pinkAccent,
-              NetworkImage("https://picsum.photos/150/150"),
+              NetworkImage(""),
             ),
             gridViewContainer(
               "Denemee",
               Colors.purpleAccent,
-              NetworkImage("https://picsum.photos/150/150"),
+              NetworkImage(""),
             ),
             gridViewContainer(
               "Denemeee",
               Colors.cyanAccent,
-              NetworkImage("https://picsum.photos/150/150"),
+              NetworkImage(""),
             ),
           ],
         ),
