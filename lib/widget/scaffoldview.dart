@@ -1,3 +1,4 @@
+import 'package:emulator/widget/alert_ve_textfield.dart';
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:flutter/material.dart';
@@ -124,6 +125,19 @@ class ScaffoldView extends StatelessWidget {
                 Colors.greenAccent,
                 NetworkImage(
                     "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fandroid-what-is-toast-and-how-to-use-it-with-examples%2F&psig=AOvVaw0pwqYfs_bWxKH80nm2yT-1&ust=1636320900899000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCPiBsMLYhPQCFQAAAAAdAAAAABAD"),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AlertVeTextField()));
+              },
+              child: gridViewContainer(
+                """TextField Sayfası \nAlert View Sayfasına git""",
+                Colors.greenAccent,
+                NetworkImage(""),
               ),
             ),
             gridViewContainer(
