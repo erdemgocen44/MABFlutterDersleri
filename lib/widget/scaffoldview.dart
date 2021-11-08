@@ -151,11 +151,17 @@ class ScaffoldView extends StatelessWidget {
                 ),
               ),
             ),
-            Card(
-              child: gridViewContainer(
-                "Deneme",
-                Colors.pinkAccent,
-                NetworkImage(resimImage),
+            GestureDetector(
+              onTap: () {
+                debugPrint("Shared Sayfasına Gidiliyor");
+                Navigator.pushNamed(context, "/shared");
+              },
+              child: Card(
+                child: gridViewContainer(
+                  "Shared Preferences\nKullanımı sayfasına git",
+                  Colors.pinkAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
             Card(

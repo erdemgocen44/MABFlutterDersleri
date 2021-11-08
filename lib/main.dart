@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         "/alert": (context) => AlertVeTextField(),
         "/hello": (context) => DegisenWidget(),
       },
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
     );
   }
 }
