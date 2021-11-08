@@ -11,6 +11,8 @@ class ScaffoldView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String resimImage =
+        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fiverr.com%2Fekidoki%2Fdraw-your-photo-into-my-anime-style&psig=AOvVaw2mWUrmGRfAIjmiKkiOvrXu&ust=1636470981846000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCNDl286HifQCFQAAAAAdAAAAABAJ";
     IconButton appbarIconButton(String tool, Icon ikon) {
       return IconButton(
         onPressed: () {
@@ -64,10 +66,12 @@ class ScaffoldView extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => FormView()));
               },
-              child: gridViewContainer(
-                """Tek Tıklama\nform sayfasına git""",
-                Colors.orangeAccent,
-                NetworkImage(""),
+              child: Card(
+                child: gridViewContainer(
+                  """Tek Tıklama\nform sayfasına git""",
+                  Colors.orangeAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
             GestureDetector(
@@ -75,10 +79,12 @@ class ScaffoldView extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => DegisenWidget()));
               },
-              child: gridViewContainer(
-                """Çift Tıklama\nHelloWorld sayfasına git""",
-                Colors.blueAccent,
-                NetworkImage(""),
+              child: Card(
+                child: gridViewContainer(
+                  """Çift Tıklama\nHelloWorld sayfasına git""",
+                  Colors.blueAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
             GestureDetector(
@@ -86,10 +92,12 @@ class ScaffoldView extends StatelessWidget {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => ImageView()));
               },
-              child: gridViewContainer(
-                """Uzun Basma\nImageView sayfasına git""",
-                Colors.greenAccent,
-                NetworkImage(""),
+              child: Card(
+                child: gridViewContainer(
+                  """Uzun Basma\nImageView sayfasına git""",
+                  Colors.greenAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
             GestureDetector(
@@ -120,11 +128,12 @@ class ScaffoldView extends StatelessWidget {
                   textColor: Colors.amber,
                 );
               },
-              child: gridViewContainer(
-                """Toast Mesajı Kullanma""",
-                Colors.greenAccent,
-                NetworkImage(
-                    "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.geeksforgeeks.org%2Fandroid-what-is-toast-and-how-to-use-it-with-examples%2F&psig=AOvVaw0pwqYfs_bWxKH80nm2yT-1&ust=1636320900899000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCPiBsMLYhPQCFQAAAAAdAAAAABAD"),
+              child: Card(
+                child: gridViewContainer(
+                  """Toast Mesajı Kullanma""",
+                  Colors.greenAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
             GestureDetector(
@@ -134,26 +143,34 @@ class ScaffoldView extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => AlertVeTextField()));
               },
-              child: gridViewContainer(
-                """TextField Sayfası \nAlert View Sayfasına git""",
-                Colors.greenAccent,
-                NetworkImage(""),
+              child: Card(
+                child: gridViewContainer(
+                  """TextField Sayfası \nAlert View Sayfasına git""",
+                  Colors.greenAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
-            gridViewContainer(
-              "Deneme",
-              Colors.pinkAccent,
-              NetworkImage(""),
+            Card(
+              child: gridViewContainer(
+                "Deneme",
+                Colors.pinkAccent,
+                NetworkImage(resimImage),
+              ),
             ),
-            gridViewContainer(
-              "Denemee",
-              Colors.purpleAccent,
-              NetworkImage(""),
+            Card(
+              child: gridViewContainer(
+                "Denemee",
+                Colors.purpleAccent,
+                NetworkImage(resimImage),
+              ),
             ),
-            gridViewContainer(
-              "Denemeee",
-              Colors.cyanAccent,
-              NetworkImage(""),
+            Card(
+              child: gridViewContainer(
+                "Denemeee",
+                Colors.cyanAccent,
+                NetworkImage(resimImage),
+              ),
             ),
           ],
         ),
