@@ -12,18 +12,59 @@ class _SharedKonusuState extends State<SharedKonusu> {
   final soyisimController = TextEditingController();
   final genelControl = GlobalKey<FormState>();
 
-  String isim = "";
-  String soyisim = "";
-  bool kayit = false;
+  String isimStr = "";
+  String soyisimStr = "";
+  bool kayitDurumu = false;
   int kayitNo = 0;
 
-  void kayitYap(String isim, String soyisim) async {
+  void kayitYap(String gIsim, String gSoyisim) async {
     final kayitAraci = await SharedPreferences.getInstance();
-    if (genelControl.currentState!.validate()) {}
+    if (genelControl.currentState!.validate()) {
+      kayitAraci.setBool("durum", true);
+      kayitAraci.setInt("kayitno", 1);
+      kayitAraci.setString("isim", gIsim);
+      kayitAraci.setString("soyisim", gSoyisim);
+
+      Fluttertoast.showToast(
+          msg: "Kayıt başarılı bir şekilde gerçekleşti.",
+          toastLength: Toast.LENGTH_LONG,
+          gravity: ToastGravity.BOTTOM);
+    }
   }
 
-  void kayitGoster() {}
-  void kayitSil() {}
+  void kayitGoster() async {
+    final kayitAraci = await SharedPreferences.getInstance();
+    bool? kDurum = kayitAraci.getBool("durum");
+    int? kNo = kayitAraci.getInt("kayitNo");
+    String? kIsim = kayitAraci.getString("isim");
+    String? kSoyisim = kayitAraci.getString("soyisim");
+    setState(() {
+      kayitDurumu = kDurum!;
+      kayitNo = kNo!;
+      isimStr = kIsim!;
+      soyisimStr = kSoyisim!;
+    });
+
+    Fluttertoast.showToast(
+        msg: "Kayıt başarılı bir şekilde gösterildi.",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM);
+  }
+
+  void kayitSil() async {
+    final kayitAraci = await SharedPreferences.getInstance();
+    kayitAraci.remove("durum");
+    kayitAraci.remove("kayitNo");
+
+    kayitAraci.remove("isim");
+
+    kayitAraci.remove("soyisim");
+
+    Fluttertoast.showToast(
+        msg: "Kayıt başarılı bir şekilde silindi.",
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM);
+  }
 
   @override
   void dispose() {
@@ -68,8 +109,9 @@ class _SharedKonusuState extends State<SharedKonusu> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () => kayitYap(
+                            isimController.text, soyisimController.text),
+                        child: const Text(
                           "Kayıt",
                           style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
@@ -84,8 +126,10 @@ class _SharedKonusuState extends State<SharedKonusu> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () {
+                          kayitGoster;
+                        },
+                        child: const Text(
                           "Getir",
                           style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
@@ -100,8 +144,10 @@ class _SharedKonusuState extends State<SharedKonusu> {
                     child: Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: ElevatedButton(
-                        onPressed: () {},
-                        child: Text(
+                        onPressed: () {
+                          kayitSil();
+                        },
+                        child: const Text(
                           "Sil",
                           style: TextStyle(color: Colors.white, fontSize: 25),
                         ),
@@ -121,10 +167,10 @@ class _SharedKonusuState extends State<SharedKonusu> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text("İsim : "),
-                          Text("Soyisim : "),
-                          Text("Kayıt Durumu : "),
-                          Text("Kayıt Numarası : ")
+                          Text("İsim :$isimStr "),
+                          Text("Soyisim :$soyisimStr "),
+                          Text("Kayıt Durumu : $kayitDurumu"),
+                          Text("Kayıt Numarası : $kayitNo")
                         ],
                       ))),
             ],
