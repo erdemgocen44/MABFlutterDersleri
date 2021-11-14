@@ -1,5 +1,6 @@
 import 'package:emulator/widget/alert_ve_textfield.dart';
 import 'package:emulator/widget/degisenwidget.dart';
+import 'package:emulator/widget/dosya_konusu.dart';
 import 'package:emulator/widget/formview.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:emulator/widget/scaffoldview.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/shared": (context) => SharedKonusu(),
         "/alert": (context) => AlertVeTextField(),
         "/hello": (context) => DegisenWidget(),
+        "/dosyakonusu": (context) => DosyaIslemleri(),
       },
       theme: ThemeData.light(),
     );
