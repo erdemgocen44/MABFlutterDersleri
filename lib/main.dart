@@ -28,7 +28,9 @@ class MyApp extends StatelessWidget {
         "/shared": (context) => SharedKonusu(),
         "/alert": (context) => AlertVeTextField(),
         "/hello": (context) => DegisenWidget(),
-        "/dosyakonusu": (context) => DosyaIslemleri(),
+        "/dosyakonusu": (context) => DosyaIslemleri(
+              kayitIslemi: KayitIslemleri(),
+            ),
       },
       theme: ThemeData.light(),
     );
