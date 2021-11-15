@@ -39,19 +39,63 @@ class Post {
   }
 }
 
+Future<Post> postuGetir() async {
+  final cevap = await baglanti
+      .get(Uri.parse("https://jsonplaceholder.typicode.com/posts/1"));
+  if (cevap.statusCode == 200)
+    return Post.fromJson(json.decode(cevap.body));
+  else {
+    throw Exception(
+        "Veriler getirilirken hata olultu Hata kodu : ${cevap.statusCode}");
+  }
+}
+
 class JsonKonusu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Json Konusu",
+          "Basit Json Konusu",
           style: TextStyle(
             fontSize: 25,
           ),
         ),
       ),
-      body: Center(),
+      body: Center(
+        child: FutureBuilder<Post>(
+          future: postuGetir(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              int userId = snapshot.data!.userId;
+              int id = snapshot.data!.id;
+              String title = snapshot.data!.title;
+              String body = snapshot.data!.body;
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  jsonTextBody("gelen userId : $userId"),
+                  jsonTextBody("gelen id : $id"),
+                  jsonTextBody("gelen title : $title"),
+                  jsonTextBody("gelen body : $body"),
+                ],
+              );
+            } else if (snapshot.hasError) {
+              return Text("Hata Oluştu : ${snapshot.error}");
+            }
+            return const CircularProgressIndicator(
+              color: Colors.pinkAccent,
+            );
+          },
+        ),
+      ),
+    );
+  }
+
+  Padding jsonTextBody(String yazi) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(yazi),
     );
   }
 }

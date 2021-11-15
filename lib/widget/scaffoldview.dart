@@ -178,7 +178,10 @@ class ScaffoldView extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                debugPrint("Basit Json Sayfasına Gidiliyor");
+                Navigator.pushNamed(context, "/jsonkonusu");
+              },
               child: Card(
                 child: gridViewContainer(
                   "Basit Json Konusu",
