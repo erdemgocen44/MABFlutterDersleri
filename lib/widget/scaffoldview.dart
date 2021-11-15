@@ -177,11 +177,14 @@ class ScaffoldView extends StatelessWidget {
                 ),
               ),
             ),
-            Card(
-              child: gridViewContainer(
-                "Denemeee",
-                Colors.cyanAccent,
-                NetworkImage(resimImage),
+            GestureDetector(
+              onTap: () {},
+              child: Card(
+                child: gridViewContainer(
+                  "Basit Json Konusu",
+                  Colors.cyanAccent,
+                  NetworkImage(resimImage),
+                ),
               ),
             ),
           ],

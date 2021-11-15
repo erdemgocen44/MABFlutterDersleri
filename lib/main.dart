@@ -3,6 +3,7 @@ import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/dosya_konusu.dart';
 import 'package:emulator/widget/formview.dart';
 import 'package:emulator/widget/imageview.dart';
+import 'package:emulator/widget/json_konusu.dart';
 import 'package:emulator/widget/scaffoldview.dart';
 import 'package:emulator/widget/shared_konusu.dart';
 import 'package:flutter/material.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         "/imageview": (context) => ImageView(),
         "/shared": (context) => SharedKonusu(),
         "/alert": (context) => AlertVeTextField(),
+        "/jsonkonusu": (context) => JsonKonusu(),
         "/hello": (context) => DegisenWidget(),
         "/dosyakonusu": (context) => DosyaIslemleri(
               kayitIslemi: KayitIslemleri(),
