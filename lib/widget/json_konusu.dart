@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:emulator/widget/appbar_classic.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as baglanti;
 
@@ -40,11 +41,14 @@ class Post {
 }
 
 Future<Post> postuGetir() async {
-  final cevap = await baglanti
-      .get(Uri.parse("https://jsonplaceholder.typicode.com/posts/1"));
-  if (cevap.statusCode == 200)
-    return Post.fromJson(json.decode(cevap.body));
-  else {
+  final cevap = await baglanti.get(
+    Uri.parse("https://jsonplaceholder.typicode.com/posts/1"),
+  );
+  if (cevap.statusCode == 200) {
+    return Post.fromJson(
+      json.decode(cevap.body),
+    );
+  } else {
     throw Exception(
         "Veriler getirilirken hata olultu Hata kodu : ${cevap.statusCode}");
   }
@@ -54,14 +58,7 @@ class JsonKonusu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          "Basit Json Konusu",
-          style: TextStyle(
-            fontSize: 25,
-          ),
-        ),
-      ),
+      appBar: defaultAppbar(context, "Basit Json Konusu"),
       body: Center(
         child: FutureBuilder<Post>(
           future: postuGetir(),
