@@ -77,12 +77,12 @@ class _SharedKonusuState extends State<SharedKonusu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Shared Preferences Kullanımı"),
+        title: const Text("Shared Preferences Kullanımı"),
       ),
       body: Form(
         key: genelControl,
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,14 +92,15 @@ class _SharedKonusuState extends State<SharedKonusu> {
                   if (deger!.isEmpty) return "Lütfen isminizi yazınız";
                 },
                 controller: isimController,
-                decoration: InputDecoration(hintText: "İsminizi Giriniz"),
+                decoration: const InputDecoration(hintText: "İsminizi Giriniz"),
               ),
               TextFormField(
                 validator: (deger) {
                   if (deger!.isEmpty) return "Lütfen soyisminizi yazınız";
                 },
                 controller: soyisimController,
-                decoration: InputDecoration(hintText: "Soyisminizi Giriniz"),
+                decoration:
+                    const InputDecoration(hintText: "Soyisminizi Giriniz"),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -162,7 +163,7 @@ class _SharedKonusuState extends State<SharedKonusu> {
               ),
               Expanded(
                   child: Padding(
-                      padding: EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(20),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,

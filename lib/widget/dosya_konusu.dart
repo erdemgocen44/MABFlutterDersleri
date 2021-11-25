@@ -94,7 +94,7 @@ class _DosyaIslemleriState extends State<DosyaIslemleri> {
             children: [
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(primary: Colors.green),
                     onPressed: veriKaydet,
@@ -109,7 +109,7 @@ class _DosyaIslemleriState extends State<DosyaIslemleri> {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(primary: Colors.amber),
                     onPressed: veriOku,
@@ -126,7 +126,7 @@ class _DosyaIslemleriState extends State<DosyaIslemleri> {
           ),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.all(15),
+              padding: const EdgeInsets.all(15),
               child: Text("$veri"),
             ),
           ),

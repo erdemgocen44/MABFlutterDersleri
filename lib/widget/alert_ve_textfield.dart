@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AlertVeTextField extends StatefulWidget {
+  const AlertVeTextField({Key? key}) : super(key: key);
+
   @override
   _AlertVeTextFieldState createState() => _AlertVeTextFieldState();
 }
@@ -21,7 +23,7 @@ class _AlertVeTextFieldState extends State<AlertVeTextField> {
         barrierDismissible: true,
         builder: (context) {
           return AlertDialog(
-            title: Text("Selamlama Metniniz"),
+            title: const Text("Selamlama Metniniz"),
             content: SingleChildScrollView(
               child: ListBody(
                 children: <Widget>[
@@ -65,7 +67,7 @@ class _AlertVeTextFieldState extends State<AlertVeTextField> {
                 },
                 controller: yaziController,
                 decoration:
-                    InputDecoration(hintText: "Lütfen isiminizi yazınız"),
+                    const InputDecoration(hintText: "Lütfen isiminizi yazınız"),
               ),
               Padding(
                 padding: const EdgeInsets.all(10),

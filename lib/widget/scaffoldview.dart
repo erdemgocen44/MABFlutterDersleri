@@ -12,7 +12,7 @@ class ScaffoldView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String resimImage =
+    const String resimImage =
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fiverr.com%2Fekidoki%2Fdraw-your-photo-into-my-anime-style&psig=AOvVaw2mWUrmGRfAIjmiKkiOvrXu&ust=1636470981846000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCNDl286HifQCFQAAAAAdAAAAABAJ";
     IconButton appbarIconButton(String tool, Icon ikon) {
       return IconButton(
@@ -28,7 +28,7 @@ class ScaffoldView extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.greenAccent.shade100,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         actions: [
           appbarIconButton(
@@ -65,39 +65,41 @@ class ScaffoldView extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => FormView()));
+                    MaterialPageRoute(builder: (context) => const FormView()));
               },
               child: Card(
                 child: gridViewContainer(
                   """Tek Tıklama\nform sayfasına git""",
                   Colors.orangeAccent,
-                  NetworkImage(resimImage),
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
             GestureDetector(
               onDoubleTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DegisenWidget()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DegisenWidget()));
               },
               child: Card(
                 child: gridViewContainer(
                   """Çift Tıklama\nHelloWorld sayfasına git""",
                   Colors.blueAccent,
-                  NetworkImage(resimImage),
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
             GestureDetector(
               onLongPress: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ImageView()));
+                    MaterialPageRoute(builder: (context) => const ImageView()));
               },
               child: Card(
                 child: gridViewContainer(
                   """Uzun Basma\nImageView sayfasına git""",
                   Colors.greenAccent,
-                  NetworkImage(resimImage),
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
@@ -132,8 +134,8 @@ class ScaffoldView extends StatelessWidget {
               child: Card(
                 child: gridViewContainer(
                   """Toast Mesajı Kullanma""",
-                  Colors.greenAccent,
-                  NetworkImage(resimImage),
+                  Colors.redAccent,
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
@@ -142,13 +144,13 @@ class ScaffoldView extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => AlertVeTextField()));
+                        builder: (context) => const AlertVeTextField()));
               },
               child: Card(
                 child: gridViewContainer(
                   """TextField Sayfası \nAlert View Sayfasına git""",
-                  Colors.greenAccent,
-                  NetworkImage(resimImage),
+                  Colors.blueGrey,
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
@@ -161,7 +163,7 @@ class ScaffoldView extends StatelessWidget {
                 child: gridViewContainer(
                   "Shared Preferences\nKullanımı sayfasına git",
                   Colors.pinkAccent,
-                  NetworkImage(resimImage),
+                  const NetworkImage(resimImage),
                 ),
               ),
             ),
@@ -176,8 +178,8 @@ class ScaffoldView extends StatelessWidget {
                 child: Card(
                   child: gridViewContainer(
                     "Dosya Sayfasına Gidiliyor",
-                    Colors.purpleAccent,
-                    NetworkImage(resimImage),
+                    Colors.blueAccent,
+                    const NetworkImage(resimImage),
                   ),
                 ),
               ),
@@ -193,8 +195,8 @@ class ScaffoldView extends StatelessWidget {
                 child: Card(
                   child: gridViewContainer(
                     "Basit Json Konusu",
-                    Colors.cyanAccent,
-                    NetworkImage(resimImage),
+                    Colors.orangeAccent,
+                    const NetworkImage(resimImage),
                   ),
                 ),
               ),
@@ -283,8 +285,8 @@ Container gridViewContainer(String yazi, Color renk, NetworkImage resim) {
       transform: Matrix4.skewY(0.0)..rotateZ(0.0),
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.all(8),
-        color: Color(0xaaFFFFFF),
+        padding: const EdgeInsets.all(8),
+        color: const Color(0xaaFFFFFF),
         child: Text(
           yazi,
           textAlign: TextAlign.center,

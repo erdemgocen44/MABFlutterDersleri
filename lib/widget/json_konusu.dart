@@ -55,6 +55,8 @@ Future<Post> postuGetir() async {
 }
 
 class JsonKonusu extends StatelessWidget {
+  const JsonKonusu({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

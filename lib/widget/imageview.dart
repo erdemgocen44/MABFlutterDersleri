@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ImageView extends StatelessWidget {
+  const ImageView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -9,7 +11,7 @@ class ImageView extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          Text(
+          const Text(
             "İnternetteki resmi placeHolder ile kullanma",
             style: TextStyle(
               fontSize: 20,
@@ -21,7 +23,7 @@ class ImageView extends StatelessWidget {
             placeholder: "assets/images/loading.gif",
             image: "https://picsum.photos/400",
           ),
-          Text(
+          const Text(
             "Assets klasöru içindeki resmi kullanma",
             style: TextStyle(
               fontSize: 20,
@@ -33,7 +35,7 @@ class ImageView extends StatelessWidget {
             "assets/images/lake.jpg",
             fit: BoxFit.cover,
           ),
-          Text(
+          const Text(
             "İnternetteki resmi kullanma",
             style: TextStyle(
               fontSize: 20,
