@@ -1,6 +1,7 @@
 import 'package:emulator/widget/alert_ve_textfield.dart';
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/imageview.dart';
+import 'package:emulator/widget/shadowBox.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
@@ -169,11 +170,15 @@ class ScaffoldView extends StatelessWidget {
                 debugPrint("Dosya Sayfasına Gidiliyor");
                 Navigator.pushNamed(context, "/dosyakonusu");
               },
-              child: Card(
-                child: gridViewContainer(
-                  "Dosya Sayfasına Gidiliyor",
-                  Colors.purpleAccent,
-                  NetworkImage(resimImage),
+              child: ShadowWidget(
+                color: Colors.purpleAccent,
+                elevation: 25,
+                child: Card(
+                  child: gridViewContainer(
+                    "Dosya Sayfasına Gidiliyor",
+                    Colors.purpleAccent,
+                    NetworkImage(resimImage),
+                  ),
                 ),
               ),
             ),
@@ -182,11 +187,15 @@ class ScaffoldView extends StatelessWidget {
                 debugPrint("Basit Json Sayfasına Gidiliyor");
                 Navigator.pushNamed(context, "/jsonkonusu");
               },
-              child: Card(
-                child: gridViewContainer(
-                  "Basit Json Konusu",
-                  Colors.cyanAccent,
-                  NetworkImage(resimImage),
+              child: ShadowWidget(
+                color: Colors.black,
+                elevation: 20,
+                child: Card(
+                  child: gridViewContainer(
+                    "Basit Json Konusu",
+                    Colors.cyanAccent,
+                    NetworkImage(resimImage),
+                  ),
                 ),
               ),
             ),
