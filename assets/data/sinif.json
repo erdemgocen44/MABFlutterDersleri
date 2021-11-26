@@ -1,0 +1,54 @@
+[
+  {
+    "okulNo": 324,
+    "adi": "Erdem",
+    "soyadi": "Gocen",
+    "cinsiyet": "Erkek",
+    "basarili": true,
+    "veli": {
+      "adi": "Ali",
+      "soyadi": "Gocen",
+      "yakinlik": "Baba",
+      "telNo": 123124
+    }
+  },
+  {
+    "okulNo": 324,
+    "adi": "Mine",
+    "soyadi": "Gocen",
+    "cinsiyet": "Erkek",
+    "basarili": true,
+    "veli": {
+      "adi": "Ali",
+      "soyadi": "Gocen",
+      "yakinlik": "Baba",
+      "telNo": 123124
+    }
+  },
+  {
+    "okulNo": 324,
+    "adi": "Akif",
+    "soyadi": "Gocen",
+    "cinsiyet": "Erkek",
+    "basarili": true,
+    "veli": {
+      "adi": "Ali",
+      "soyadi": "Gocen",
+      "yakinlik": "Baba",
+      "telNo": 123124
+    }
+  },
+  {
+    "okulNo": 324,
+    "adi": "Dila",
+    "soyadi": "Gocen",
+    "cinsiyet": "Erkek",
+    "basarili": true,
+    "veli": {
+      "adi": "Ali",
+      "soyadi": "Gocen",
+      "yakinlik": "Baba",
+      "telNo": 123124
+    }
+  }
+]

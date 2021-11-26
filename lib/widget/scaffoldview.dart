@@ -12,8 +12,7 @@ class ScaffoldView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const String resimImage =
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.fiverr.com%2Fekidoki%2Fdraw-your-photo-into-my-anime-style&psig=AOvVaw2mWUrmGRfAIjmiKkiOvrXu&ust=1636470981846000&source=images&cd=vfe&ved=0CAgQjRxqFwoTCNDl286HifQCFQAAAAAdAAAAABAJ";
+    const String resimImage = "https://via.placeholder.com/600/92c952";
     IconButton appbarIconButton(String tool, Icon ikon) {
       return IconButton(
         onPressed: () {
@@ -212,7 +211,7 @@ class ScaffoldView extends StatelessWidget {
                 child: Card(
                   child: gridViewContainer(
                     "Local Json Konusu",
-                    Colors.orangeAccent,
+                    Colors.deepPurpleAccent,
                     const NetworkImage(resimImage),
                   ),
                 ),
