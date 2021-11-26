@@ -13,10 +13,10 @@
     }
   },
   {
-    "okulNo": 324,
+    "okulNo": 532,
     "adi": "Mine",
     "soyadi": "Gocen",
-    "cinsiyet": "Erkek",
+    "cinsiyet": "Kız",
     "basarili": true,
     "veli": {
       "adi": "Ali",
@@ -26,7 +26,7 @@
     }
   },
   {
-    "okulNo": 324,
+    "okulNo": 453,
     "adi": "Akif",
     "soyadi": "Gocen",
     "cinsiyet": "Erkek",
@@ -39,10 +39,10 @@
     }
   },
   {
-    "okulNo": 324,
+    "okulNo": 123,
     "adi": "Dila",
     "soyadi": "Gocen",
-    "cinsiyet": "Erkek",
+    "cinsiyet": "Kız",
     "basarili": true,
     "veli": {
       "adi": "Ali",

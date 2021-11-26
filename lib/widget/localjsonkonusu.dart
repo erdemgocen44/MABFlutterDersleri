@@ -31,7 +31,10 @@ class _LocalJsonKonusuState extends State<LocalJsonKonusu> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: <Widget>[
-                        Text("Adı : " + ogrenci[index]['adi'])
+                        Text("Okul No : ${ogrenci[index]['okulNo']}"),
+                        Text("Adı : " + ogrenci[index]['adi']),
+                        Text("Soyadı : " + ogrenci[index]['soyadi']),
+                        Text("Velisi : " + ogrenci[index]['veli']['yakinlik']),
                       ],
                     ),
                   );
