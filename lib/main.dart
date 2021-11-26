@@ -4,6 +4,7 @@ import 'package:emulator/widget/dosya_konusu.dart';
 import 'package:emulator/widget/formview.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:emulator/widget/json_konusu.dart';
+import 'package:emulator/widget/localjsonkonusu.dart';
 import 'package:emulator/widget/scaffoldview.dart';
 import 'package:emulator/widget/shared_konusu.dart';
 import 'package:flutter/material.dart';
@@ -23,6 +24,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: "/",
       routes: {
+        "/dosyakonusu": (context) => DosyaIslemleri(
+              kayitIslemi: KayitIslemleri(),
+            ),
         "/": (context) => ScaffoldView(),
         "/formview": (context) => FormView(),
         "/imageview": (context) => ImageView(),
@@ -30,9 +34,8 @@ class MyApp extends StatelessWidget {
         "/alert": (context) => AlertVeTextField(),
         "/jsonkonusu": (context) => JsonKonusu(),
         "/hello": (context) => DegisenWidget(),
-        "/dosyakonusu": (context) => DosyaIslemleri(
-              kayitIslemi: KayitIslemleri(),
-            ),
+        "/json": (context) => JsonKonusu(),
+        "/localjsonkonusu": (context) => LocalJsonKonusu(),
       },
       theme: ThemeData.light(),
     );

@@ -201,6 +201,23 @@ class ScaffoldView extends StatelessWidget {
                 ),
               ),
             ),
+            GestureDetector(
+              onTap: () {
+                debugPrint("Local Json Sayfasına Gidiliyor");
+                Navigator.pushNamed(context, "/localjsonkonusu");
+              },
+              child: ShadowWidget(
+                color: Colors.black,
+                elevation: 20,
+                child: Card(
+                  child: gridViewContainer(
+                    "Local Json Konusu",
+                    Colors.orangeAccent,
+                    const NetworkImage(resimImage),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
