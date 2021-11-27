@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:emulator/widget/appbar_classic.dart';
 import 'package:flutter/material.dart';
 
@@ -11,18 +13,35 @@ class BasitHttp extends StatefulWidget {
 }
 
 class _BasitHttpState extends State<BasitHttp> {
-  var veri;
+  var veri = "";
 
   void getIslemiYap() {
     http
         .get(
-          Uri.parse("https://google.com"),
-        )
-        .then((cevap) => print(cevap.statusCode));
+      Uri.parse("https://jsonplaceholder.typicode.com/users"),
+    )
+        .then((cevap) {
+      print(cevap.statusCode);
+      print(cevap.body.length);
+      setState(() {
+        veri = cevap.body;
+      });
+    });
+
     print("Get işlemini denediniz");
   }
 
   void postIslemiYap() {
+    http
+        .post(
+      Uri.parse("https://jsonplaceholder.typicode.com/posts"),
+      body: jsonEncode(veri),
+    )
+        .then((cevap) {
+      setState(() {
+        veri = cevap.body;
+      });
+    });
     print("Post işlemini denediniz");
   }
 
@@ -59,9 +78,11 @@ class _BasitHttpState extends State<BasitHttp> {
               ),
             ],
           ),
-          const Expanded(
+          Expanded(
               child: Center(
-            child: Text("Gelen Veri"),
+            child: ListView(
+              children: [Text('Gelen Veri : \n $veri')],
+            ),
           ))
         ],
       ),
