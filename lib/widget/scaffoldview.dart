@@ -217,6 +217,23 @@ class ScaffoldView extends StatelessWidget {
                 ),
               ),
             ),
+            GestureDetector(
+              onTap: () {
+                debugPrint("Basit Http Sayfasına Gidiliyor");
+                Navigator.pushNamed(context, "/basithttp");
+              },
+              child: ShadowWidget(
+                color: Colors.black,
+                elevation: 20,
+                child: Card(
+                  child: gridViewContainer(
+                    "Basit Http Konusu",
+                    Colors.greenAccent,
+                    const NetworkImage(resimImage),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
