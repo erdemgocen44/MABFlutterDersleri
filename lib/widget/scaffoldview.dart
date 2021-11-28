@@ -69,7 +69,7 @@ class ScaffoldView extends StatelessWidget {
               child: Card(
                 child: gridViewContainer(
                   """Tek Tıklama\nform sayfasına git""",
-                  Colors.orangeAccent,
+                  Colors.orange,
                   const NetworkImage(resimImage),
                 ),
               ),
@@ -84,7 +84,7 @@ class ScaffoldView extends StatelessWidget {
               child: Card(
                 child: gridViewContainer(
                   """Çift Tıklama\nHelloWorld sayfasına git""",
-                  Colors.blueAccent,
+                  Colors.blue,
                   const NetworkImage(resimImage),
                 ),
               ),
