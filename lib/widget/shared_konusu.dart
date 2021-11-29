@@ -170,8 +170,8 @@ class _SharedKonusuState extends State<SharedKonusu> {
                         children: [
                           Text("İsim :$isimStr "),
                           Text("Soyisim :$soyisimStr "),
-                          Text("Kayıt Durumu : $kayitDurumu"),
-                          Text("Kayıt Numarası : $kayitNo")
+                          Text("Kayıt Durumu :$kayitDurumu"),
+                          Text("Kayıt Numarası :$kayitNo")
                         ],
                       ))),
             ],

@@ -43,7 +43,7 @@ class ScaffoldView extends StatelessWidget {
             ),
           ),
           appbarIconButton(
-            "Cull",
+            "CullAir",
             const Icon(
               Icons.add_a_photo,
             ),
