@@ -2,6 +2,7 @@ import 'package:emulator/widget/alert_ve_textfield.dart';
 import 'package:emulator/widget/basithttp.dart';
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/dosya_konusu.dart';
+import 'package:emulator/widget/elfeneri.dart';
 import 'package:emulator/widget/formview.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:emulator/widget/json_konusu.dart';
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
         "/json": (context) => JsonKonusu(),
         "/localjsonkonusu": (context) => LocalJsonKonusu(),
         "/basithttp": (context) => BasitHttp(),
+        "/elfeneri": (context) => ElFeneriView(),
       },
       theme: ThemeData.light(),
     );

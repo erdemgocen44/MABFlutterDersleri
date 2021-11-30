@@ -63,6 +63,18 @@ class ScaffoldView extends StatelessWidget {
           children: <Widget>[
             GestureDetector(
               onTap: () {
+                Navigator.pushNamed(context, "/elfeneri");
+              },
+              child: Card(
+                child: gridViewContainer(
+                  "El Feneri sayfasına git",
+                  Colors.orange,
+                  const NetworkImage(resimImage),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const FormView()));
               },
