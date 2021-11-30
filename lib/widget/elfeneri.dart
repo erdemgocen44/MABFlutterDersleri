@@ -31,11 +31,9 @@ class _ElFeneriViewState extends State<ElFeneriView> {
 
   Future _feneriAc() async {
     if (_acikMi) {
-      Lamp.turnOff();
       lamba = "kapali";
       btn = "Aç";
     } else {
-      Lamp.turnOn(intensity: _siddeti);
       lamba = "acik";
       btn = "Kapat";
     }
@@ -54,16 +52,32 @@ class _ElFeneriViewState extends State<ElFeneriView> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Image.asset("assets/images/$lamba"),
+          Container(
+            width: 200,
+            child: Image.asset(
+              "assets/images/$lamba",
+              fit: BoxFit.cover,
+            ),
+          ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               primary: Colors.red,
             ),
-            onPressed: () => debugPrint("Ampul açıldı"),
+            onPressed: _feneriAc,
             child: Text("Feneri $btn"),
+          ),
+          Slider(
+            value: _siddeti,
+            onChanged: _acikMi ? _siddetiDegistir : null,
           ),
         ],
       ),
     );
+  }
+
+  _siddetiDegistir(double siddet) {
+    setState(() {
+      _siddeti = siddet;
+    });
   }
 }
