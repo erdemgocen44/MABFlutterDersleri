@@ -31,7 +31,7 @@ class ScaffoldView extends StatelessWidget {
       appBar: AppBar(
         actions: [
           appbarIconButton(
-            "Air",
+            "Rive",
             const Icon(
               Icons.electric_bike_sharp,
             ),
@@ -43,7 +43,7 @@ class ScaffoldView extends StatelessWidget {
             ),
           ),
           appbarIconButton(
-            "CullAir",
+            "Molard",
             const Icon(
               Icons.add_a_photo,
             ),

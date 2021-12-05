@@ -14,7 +14,7 @@ class ImageView extends StatelessWidget {
           const Text(
             "İnternetteki resmi placeHolder ile kullanma",
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 22,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
