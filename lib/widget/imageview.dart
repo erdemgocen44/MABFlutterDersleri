@@ -7,7 +7,7 @@ class ImageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ImageView Kullanımı"),
+        title: const Text("ImageView Kullanımı"),
       ),
       body: ListView(
         children: [
