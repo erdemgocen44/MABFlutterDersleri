@@ -1,4 +1,5 @@
 import 'package:emulator/widget/alert_ve_textfield.dart';
+import 'package:emulator/widget/ana_card.dart';
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/imageview.dart';
 import 'package:emulator/widget/shadowBox.dart';
@@ -61,6 +62,7 @@ class ScaffoldView extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: <Widget>[
+            AnaCard("/imageview", "Images Sayfası"),
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, "/elfeneri");
