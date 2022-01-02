@@ -82,11 +82,13 @@ flutter:
     - family: deger1
       fonts:
         - asset: assets/fonts/deger1.ttf
-
+    #       - asset: fonts/Schyler-Italic.ttf
+    #         style: italic
     - family: deger2
       fonts:
         - asset: assets/fonts/deger2.ttf
-
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

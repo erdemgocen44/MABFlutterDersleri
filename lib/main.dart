@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
         "/basithttp": (context) => BasitHttp(),
         "/elfeneri": (context) => ElFeneriView(),
       },
-      theme: ThemeData.light(),
+      theme: ThemeData(fontFamily: "deger2"),
     );
   }
 }
