@@ -1,5 +1,6 @@
 import 'package:emulator/widget/alert_ve_textfield.dart';
 import 'package:emulator/widget/basithttp.dart';
+import 'package:emulator/widget/bilgilendirme.dart';
 import 'package:emulator/widget/degisenwidget.dart';
 import 'package:emulator/widget/dosya_konusu.dart';
 import 'package:emulator/widget/elfeneri.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         "/localjsonkonusu": (context) => LocalJsonKonusu(),
         "/basithttp": (context) => BasitHttp(),
         "/elfeneri": (context) => ElFeneriView(),
+        "/bilgilendirme": (context) => BilgilendirmeSayfasi(),
       },
       theme: ThemeData(fontFamily: "deger2"),
     );
